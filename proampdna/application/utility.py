@@ -47,3 +47,17 @@ def scrap(specie_id):
             }
 
     return ret
+
+
+def revCod(stri):
+   ret = "";
+   for i in range(len(stri)):
+       if stri[i] == 'A':
+           ret += 'T'
+       elif stri[i] == 'T':
+           ret += 'A'
+       elif stri[i] == 'G':
+           ret += 'C'
+       elif stri[i] == 'C':
+           ret += 'G'
+   return ret[::-1]

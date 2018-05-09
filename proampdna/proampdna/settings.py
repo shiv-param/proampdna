@@ -81,7 +81,9 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100
 }
 
 # Database
@@ -114,6 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 SCRAP_URL = "http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species={specie_id}&aa=1&style=N"
+VALID_SEQUENCE = ['W', 'V', 'H', 'R', 'P', 'I', 'K', 'Y', 'Q', 'M', 'D', 'C', 'T', 'A', 'N', 'F', 'S', 'L', 'G', 'E']
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

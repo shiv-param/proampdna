@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^$', index_view),
     url(r'^application/$', serve, kwargs={'path': 'index.html'}),
     url(r'^api/load-species-data/$', SpecieViewSet.as_view({'get': 'load_species_data'})),
+    url(r'^api/run-app/$', SpecieViewSet.as_view({'get': 'run_app'})),
     url(r'^(?!/?static/)(?!/?media/)(?P<path>.*\..*)$', RedirectView.as_view(url='/static/%(path)s', permanent=False)),
 ]
