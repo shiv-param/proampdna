@@ -1,20 +1,379 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nav class="navbar navbar-dark bg-dark navigation-header">
+  <div class="container">
+    <a class="navbar-brand" href="/">ProAmpDNA</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </div>
+  </div>
+  </div>
+
+</nav>
+
+<div class="banner">
+  <h1 class="page-header">Application</h1>
+</div>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-12 application">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <div class="form-element">
+            <div class="input-group mb-4">
+              <input type="text" class="form-control" placeholder="Enter Species ID" aria-label="Enter Species ID" aria-describedby="species_id">
+              <div class="input-group-append">
+                <button class="btn btn-outline-info" type="button">Load data</button>
+              </div>
+            </div>
+            <small class="form-text text-muted codon-help-text">
+              Data loaded for <span>3606</span>. <a href="">View</a>
+            </small>
+          </div>
+          <div class="form-element">
+            <label for="amino_acid_sequence">Amino acid sequence</label>
+            <textarea class="form-control" id="amino_acid_sequence" rows="6"></textarea>
+          </div>
+          <div class="form-element">
+            <label for="primer_length">Primer length</label>
+            <select class="form-control" id="primer_length">
+              <option>3</option>
+              <option>6</option>
+              <option>9</option>
+              <option>12</option>
+              <option>15</option>
+              <option>18</option>
+              <option>21</option>
+              <option>24</option>
+              <option>27</option>
+              <option>30</option>
+            </select>
+          </div>
+          <div class="form-element">
+            <label for="email">Email id (Optional)</label>
+            <input type="text" class="form-control" id="email" aria-describedby="email" placeholder="Enter your email id">
+          </div>
+          <div class="form-element">
+            <button class="btn btn-info btn-block">Run Application</button>
+          </div>
+        </div>
+        <div class="col-12 col-md-8">
+          <table class="table table-bordered table-sm table-proampdna">
+          <thead>
+            <tr>
+              <th colspan="7" scope="col" class="text-center">Heading</th>
+            </tr>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+          <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+          <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="footer-wrap">
+        <p><strong>&copy; ProAmpDNA</strong> - All Rights Reserved</p>
+        <p>Developed and Maintained by <a href="https://github.com/shiv-param/">Shiv Prasad</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="row">-->
+              <!--<div class="col-12 table-responsive form-content">-->
+                <!--<table class="table table-bordered table-sm table-proampdna">-->
+                  <!--<thead>-->
+                    <!--<tr>-->
+                      <!--<th colspan="4" scope="col" class="text-center">Heading</th>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                      <!--<th scope="col">#</th>-->
+                      <!--<th scope="col">First</th>-->
+                      <!--<th scope="col">Last</th>-->
+                      <!--<th scope="col">Handle</th>-->
+                    <!--</tr>-->
+                  <!--</thead>-->
+                  <!--<tbody>-->
+                    <!--<tr>-->
+                      <!--<th scope="row">1</th>-->
+                      <!--<td>Mark</td>-->
+                      <!--<td>Otto</td>-->
+                      <!--<td>@mdo</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                      <!--<th scope="row">2</th>-->
+                      <!--<td>Jacob</td>-->
+                      <!--<td>Thornton</td>-->
+                      <!--<td>@fat</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                      <!--<th scope="row">3</th>-->
+                      <!--<td colspan="2">Larry the Bird</td>-->
+                      <!--<td>@twitter</td>-->
+                    <!--</tr>-->
+                  <!--<tr>-->
+                      <!--<th scope="row">1</th>-->
+                      <!--<td>Mark</td>-->
+                      <!--<td>Otto</td>-->
+                      <!--<td>@mdo</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                      <!--<th scope="row">2</th>-->
+                      <!--<td>Jacob</td>-->
+                      <!--<td>Thornton</td>-->
+                      <!--<td>@fat</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                      <!--<th scope="row">3</th>-->
+                      <!--<td colspan="2">Larry the Bird</td>-->
+                      <!--<td>@twitter</td>-->
+                    <!--</tr>-->
+                  <!--<tr>-->
+                      <!--<th scope="row">1</th>-->
+                      <!--<td>Mark</td>-->
+                      <!--<td>Otto</td>-->
+                      <!--<td>@mdo</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                      <!--<th scope="row">2</th>-->
+                      <!--<td>Jacob</td>-->
+                      <!--<td>Thornton</td>-->
+                      <!--<td>@fat</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                      <!--<th scope="row">3</th>-->
+                      <!--<td colspan="2">Larry the Bird</td>-->
+                      <!--<td>@twitter</td>-->
+                    <!--</tr>-->
+                  <!--</tbody>-->
+                <!--</table>-->
+              <!--</div>-->
+            <!--</div>-->

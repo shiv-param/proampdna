@@ -1,0 +1,95 @@
+.navigation-header{
+  background-color: #22a6b3 !important;
+  font-family: 'Dosis', sans-serif;
+}
+
+.banner{
+  background-color: #dff9fb;
+  color:#777;
+  height: 300px;
+  width: 100%;
+  padding: 30px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.page-header{
+  text-align:center;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 20px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.application{
+  background-color: #FFFFFF;
+  margin-top: -94px;
+  padding:30px;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border: 0px solid #000000;
+  -webkit-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
+  font-family: 'Dosis', sans-serif;
+}
+
+.application .form-element{
+  margin-top: 20px;
+}
+
+.application .codon-help-text{
+  margin-top: -22px;
+  margin-left: 2px;
+}
+
+.table-proampdna{
+  margin-top: 20px;
+  color:#777;
+  font-weight: 500;
+  line-height: 2;
+  font-size: 12px;
+}
+
+/*.application-input-form{*/
+
+    /*padding: 30px;*/
+
+  /*font-size: 12px;*/
+
+/*}*/
+
+
+
+/*.application-input-form .form-content{*/
+  /*margin-top: 20px;*/
+/*}*/
+
+/*.application-input-form .form-label{*/
+  /*font-size: 20px;*/
+/*}*/
+
+/*.application-input-form-footer{*/
+  /*background-color: #dff9fb;*/
+  /*padding: 30px;*/
+  /*border-radius: 0px 0px 3px 3px;*/
+    /*-moz-border-radius: 0px 0px 3px 3px;*/
+    /*-webkit-border-radius: 0px 0px 3px 3px;*/
+    /*border: 0px solid #000000;*/
+    /*-webkit-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);*/
+    /*-moz-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);*/
+    /*box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);*/
+  /*font-family: 'Dosis', sans-serif;*/
+/*}*/
+
+/*.application-results{*/
+  /*margin-top: 100px;*/
+  /*font-size: 12px;*/
+/*}*/
+
+.footer-wrap{
+  text-align: center;
+  margin-top: 120px;
+  font-family: 'Dosis', sans-serif;
+}
