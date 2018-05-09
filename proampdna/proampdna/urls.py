@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from application.views import index_view, application_view
+from application.views import *
 from django.contrib.staticfiles.views import serve
 from django.views.generic import RedirectView
 
@@ -23,5 +23,6 @@ urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^$', index_view),
     url(r'^application/$', serve, kwargs={'path': 'index.html'}),
+    url(r'^api/load-species-data/$', SpecieViewSet.as_view({'get': 'load_species_data'})),
     url(r'^(?!/?static/)(?!/?media/)(?P<path>.*\..*)$', RedirectView.as_view(url='/static/%(path)s', permanent=False)),
 ]

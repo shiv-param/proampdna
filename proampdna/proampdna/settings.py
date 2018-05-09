@@ -113,6 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SCRAP_URL = "http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species={specie_id}&aa=1&style=N"
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
