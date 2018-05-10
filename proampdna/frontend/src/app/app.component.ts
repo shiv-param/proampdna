@@ -27,7 +27,7 @@ export class AppComponent {
 
   private result_data;
 
-  // constructor(private http: Http){}
+  constructor(private http: Http){}
 
   public fetchSpeciesData(){
       if(this.specie_id.trim() != ""){
