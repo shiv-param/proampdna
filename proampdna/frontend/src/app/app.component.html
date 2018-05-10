@@ -27,9 +27,29 @@
                 <button class="btn btn-outline-info" type="button" (click)="fetchSpeciesData()">Load data</button>
               </div>
             </div>
-            <small class="form-text text-muted codon-help-text">
-              Data loaded for <span>3606</span>. <a href="">View</a>
+            <small class="form-text text-muted codon-help-text" *ngIf="specie_data_loaded">
+              Data loaded for <span>{{ specie_data.specie_id }}</span>. <a href="#" data-toggle="modal" data-target="#species_data_modal">View</a>
             </small>
+            <div >
+              <table class="table table-striped table-sm table-proampdna">
+                <thead>
+                  <tr>
+                    <th scope="col">Triplet</th>
+                    <th scope="col">Amino Acid</th>
+                    <th scope="col">Frequency</th>
+                    <th scope="col">Fraction</th>
+                  </tr>
+                </thead>
+                <tbody class="species_data_wrap">
+                  <tr *ngFor="let result of specie_data.specie_data">
+                    <td>{{ result.triplet }}</td>
+                    <td>{{ result.amino_acid }}</td>
+                    <td>{{ result.frequency }}</td>
+                    <td>{{ result.fraction }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
           <div class="form-element">
             <label for="amino_acid_sequence">Amino acid sequence</label>
@@ -93,73 +113,21 @@
   </div>
 </div>
 
-<!--<div class="row">-->
-              <!--<div class="col-12 table-responsive form-content">-->
-                <!--<table class="table table-bordered table-sm table-proampdna">-->
-                  <!--<thead>-->
-                    <!--<tr>-->
-                      <!--<th colspan="4" scope="col" class="text-center">Heading</th>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                      <!--<th scope="col">#</th>-->
-                      <!--<th scope="col">First</th>-->
-                      <!--<th scope="col">Last</th>-->
-                      <!--<th scope="col">Handle</th>-->
-                    <!--</tr>-->
-                  <!--</thead>-->
-                  <!--<tbody>-->
-                    <!--<tr>-->
-                      <!--<th scope="row">1</th>-->
-                      <!--<td>Mark</td>-->
-                      <!--<td>Otto</td>-->
-                      <!--<td>@mdo</td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                      <!--<th scope="row">2</th>-->
-                      <!--<td>Jacob</td>-->
-                      <!--<td>Thornton</td>-->
-                      <!--<td>@fat</td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                      <!--<th scope="row">3</th>-->
-                      <!--<td colspan="2">Larry the Bird</td>-->
-                      <!--<td>@twitter</td>-->
-                    <!--</tr>-->
-                  <!--<tr>-->
-                      <!--<th scope="row">1</th>-->
-                      <!--<td>Mark</td>-->
-                      <!--<td>Otto</td>-->
-                      <!--<td>@mdo</td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                      <!--<th scope="row">2</th>-->
-                      <!--<td>Jacob</td>-->
-                      <!--<td>Thornton</td>-->
-                      <!--<td>@fat</td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                      <!--<th scope="row">3</th>-->
-                      <!--<td colspan="2">Larry the Bird</td>-->
-                      <!--<td>@twitter</td>-->
-                    <!--</tr>-->
-                  <!--<tr>-->
-                      <!--<th scope="row">1</th>-->
-                      <!--<td>Mark</td>-->
-                      <!--<td>Otto</td>-->
-                      <!--<td>@mdo</td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                      <!--<th scope="row">2</th>-->
-                      <!--<td>Jacob</td>-->
-                      <!--<td>Thornton</td>-->
-                      <!--<td>@fat</td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                      <!--<th scope="row">3</th>-->
-                      <!--<td colspan="2">Larry the Bird</td>-->
-                      <!--<td>@twitter</td>-->
-                    <!--</tr>-->
-                  <!--</tbody>-->
-                <!--</table>-->
-              <!--</div>-->
-            <!--</div>-->
+<div class="modal fade" id="species_data_modal" tabindex="-1" role="dialog" aria-labelledby="species_data_modal_title" aria-hidden="true" *ngIf="specie_data_loaded">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="species_data_modal_title">{{ specie_data.specie_head }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

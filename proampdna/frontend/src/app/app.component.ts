@@ -17,13 +17,10 @@ export class AppComponent {
   private primer_length: string = "12";
   private email: string = "shiv.prsd19@gmail.com";
 
-  private specie_data = {
-      id: '',
-      head: '',
-      data: []
-  };
+  private specie_data = {};
+  private result_data = {};
 
-  private result_data;
+  private specie_data_loaded: boolean = false;
 
   constructor(private http: HttpClient){}
 
@@ -31,7 +28,8 @@ export class AppComponent {
       if(this.specie_id.trim() != ""){
           let url = this.base_url + "/api/load-species-data/?specie_id=" + this.specie_id;
           this.http.get(url).subscribe((res)=>{
-            console.log(res);
+            this.specie_data = res.species_data;
+            this.specie_data_loaded = true;
           });
       }
   }

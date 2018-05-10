@@ -39,6 +39,10 @@
   margin-top: 20px;
 }
 
+.application .species_data_wrap{
+  max-height: 200px;
+  overflow-y: scroll;
+}
 .application .codon-help-text{
   margin-top: -22px;
   margin-left: 2px;
