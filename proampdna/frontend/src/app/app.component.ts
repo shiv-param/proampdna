@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {of} from "rxjs/index";
 
 
 @Component({
@@ -23,6 +24,9 @@ export class AppComponent {
   private page_offsets = [];
   private previous = "";
   private next = "";
+  private start_count = "";
+  private end_count = "";
+  private least_degenerate_codon = "";
 
   private specie_data_loaded: boolean = false;
 
@@ -51,6 +55,7 @@ export class AppComponent {
               this.total_results = Number(res.count);
               this.previous = res.previous;
               this.next = res.next;
+              this.least_degenerate_codon = res.results[0].aasldc;
               let first_page: boolean = true;
               let last_page: boolean = true;
               let limit = 100;
@@ -77,6 +82,9 @@ export class AppComponent {
                   offset -= limit;
                 }
               }
+              this.start_count = offset;
+              this.end_count = offset + limit;
+              if(this.end_count > this.total_results) this.end_count = this.total_results;
               if(!first_page){
                 if(Number((offset/limit)) > 1){
                   this.page_offsets.push({
@@ -102,15 +110,15 @@ export class AppComponent {
                     page_number: Number((offset/limit)+2),
                     selected: false
                 });
-                let max_page = Number(this.total_results/limit);
+                let max_page:number = Number(this.total_results/limit);
                 if(max_page.toFixed()*limit < this.total_results){
                   max_page = max_page.toFixed() + 1;
                 }
                 if(Number((offset/limit)) < max_page){
                   this.page_offsets.push({
-                      url: this.base_url + "/api/run-app/?amino_acid_seq=" + this.amino_acid_sequence + "&email=" + this.email + "&primer_len=" + this.primer_length + "&specie_id="+this.specie_id + "&limit=" + limit + "&offset=" + ((max_page.toFixed()*limit)-limit),
-                      page_number: max_page.toFixed(),
-                      selected: false,
+                      "url": this.base_url + "/api/run-app/?amino_acid_seq=" + this.amino_acid_sequence + "&email=" + this.email + "&primer_len=" + this.primer_length + "&specie_id="+this.specie_id + "&limit=" + limit + "&offset=" + ((max_page.toFixed()*limit)-limit),
+                      "page_number": max_page.toFixed(),
+                      "selected": false,
                   });
                 }
               }
