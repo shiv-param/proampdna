@@ -36,6 +36,7 @@ class ResultSetSerializer(serializers.Serializer):
     length = serializers.IntegerField()
     frequency = serializers.FloatField()
     reversePrimer = serializers.CharField(max_length=256)
+    aasldc = serializers.CharField(max_length=256)
 
     def create(self, validated_data):
         return ResultSet(**validated_data)

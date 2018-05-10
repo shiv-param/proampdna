@@ -189,14 +189,15 @@ class SpecieViewSet(viewsets.ModelViewSet):
                     GPerc = (GCount / patLen) * 100
                     salt += (120 * math.sqrt(divalent - DNTP))
                     r = (math.log(salt / 100) / math.log(10))
-                    tm = (64.9 + 41 * ((GCount + CCount - 16.4) / (ACount + CCount + TCount + GCount)));
+                    tm = (64.9 + 41 * ((GCount + CCount - 16.4) / (ACount + CCount + TCount + GCount)))
                     ret['resultData'].append({
                         'forwardPrimer': pattern[::-1],
                         'reversePrimer': app_utility.revCod(pattern[::-1]),
                         'frequency': freq,
                         'length': patLen,
                         'GCPerc': GCPerc,
-                        'meltingPoint': tm
+                        'meltingPoint': tm,
+                        'aasldc': ret['aasldc']
                     })
                 ret['total'] = len(ret['resultData'])
 
