@@ -25,6 +25,8 @@ export class AppComponent {
       data: []
   };
 
+  private result_data;
+
   // constructor(private http: Http){}
 
   public fetchSpeciesData(){
@@ -37,17 +39,19 @@ export class AppComponent {
           });
       }
   }
-  // public runApp(){
-  //
-  //     let url = this.base_url + "/api/run-app/?amino_acid_seq=" + this.amino_acid_sequence + "&email=" + this.email + "&primer_len=" + this.primer_length + "&specie_id="+this.specie_id;
-  //
-  //     this.http.get(url)
-  //       .toPromise()
-  //       .then((res)=>{
-  //         console.log(res);
-  //       }).catch((err) => {
-  //         console.log(err)
-  //       });
-  //
-  // }
+
+  public runApp(){
+
+      let url = this.base_url + "/api/run-app/?amino_acid_seq=" + this.amino_acid_sequence + "&email=" + this.email + "&primer_len=" + this.primer_length + "&specie_id="+this.specie_id;
+
+      this.http.get(url)
+        .toPromise()
+        .then((res)=>{
+          console.log(res);
+        }).catch((err) => {
+          console.log(err)
+        });
+
+  }
+
 }
