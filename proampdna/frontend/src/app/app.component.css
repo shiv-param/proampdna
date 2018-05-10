@@ -6,7 +6,7 @@
 .banner{
   background-color: #dff9fb;
   color:#777;
-  height: 300px;
+  height: 260px;
   width: 100%;
   padding: 30px;
   font-family: 'Dosis', sans-serif;
@@ -23,7 +23,7 @@
 
 .application{
   background-color: #FFFFFF;
-  margin-top: -94px;
+  margin-top: -80px;
   padding:30px;
   border-radius: 3px 3px 3px 3px;
   -moz-border-radius: 3px 3px 3px 3px;
