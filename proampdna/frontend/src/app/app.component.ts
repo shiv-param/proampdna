@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs';
-import 'rxjs/add/operator/toPromise';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -27,15 +25,13 @@ export class AppComponent {
 
   private result_data;
 
-  constructor(private http: Http){}
+  constructor(private http: HttpClient){}
 
   public fetchSpeciesData(){
       if(this.specie_id.trim() != ""){
           let url = this.base_url + "/api/load-species-data/?specie_id=" + this.specie_id;
-          this.http.get(url).toPromise().then((res)=>{
+          this.http.get(url).subscribe((res)=>{
             console.log(res);
-          }).catch((err)=>{
-            console.log(err)
           });
       }
   }
@@ -44,12 +40,8 @@ export class AppComponent {
 
       let url = this.base_url + "/api/run-app/?amino_acid_seq=" + this.amino_acid_sequence + "&email=" + this.email + "&primer_len=" + this.primer_length + "&specie_id="+this.specie_id;
 
-      this.http.get(url)
-        .toPromise()
-        .then((res)=>{
+      this.http.get(url).subscribe((res)=>{
           console.log(res);
-        }).catch((err) => {
-          console.log(err)
         });
 
   }
