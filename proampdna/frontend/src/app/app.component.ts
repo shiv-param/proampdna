@@ -39,7 +39,7 @@ export class AppComponent {
       let url = this.base_url + "/api/run-app/?amino_acid_seq=" + this.amino_acid_sequence + "&email=" + this.email + "&primer_len=" + this.primer_length + "&specie_id="+this.specie_id;
 
       this.http.get(url).subscribe((res)=>{
-          console.log(res);
+          this.result_data = res.results;
         });
 
   }

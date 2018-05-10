@@ -91,14 +91,14 @@
             </tr>
           </thead>
           <tbody>
-            <!--<tr *ngFor="result in app_results">-->
-              <!--<td>result.forwardPrimer</td>-->
-              <!--<td>result.reversePrimer</td>-->
-              <!--<td>result.length</td>-->
-              <!--<td>result.frequency</td>-->
-              <!--<td>result.meltingPoint</td>-->
-              <!--<td>result.GCPerc</td>-->
-            <!--</tr>-->
+            <tr *ngFor="let result of result_data">
+              <td>{{ result.forwardPrimer }}</td>
+              <td>{{ result.reversePrimer }}</td>
+              <td>{{ result.length }}</td>
+              <td>{{ result.frequency }}</td>
+              <td>{{ result.meltingPoint }}</td>
+              <td>{{ result.GCPerc }}</td>
+            </tr>
           </tbody>
         </table>
         </div>
