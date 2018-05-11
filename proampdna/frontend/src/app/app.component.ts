@@ -29,6 +29,7 @@ export class AppComponent {
   private least_degenerate_codon = "";
 
   private specie_data_loaded: boolean = false;
+  private final_data_loaded: boolean = false;
 
   constructor(private http: HttpClient){}
 
@@ -49,6 +50,7 @@ export class AppComponent {
       }
 
       this.http.get(url).subscribe((res)=>{
+          this.final_data_loaded = true;
           this.result_data = res.results;
           this.page_offsets = [];
           if(Number(res.count) > 100){
@@ -82,7 +84,8 @@ export class AppComponent {
                   offset -= limit;
                 }
               }
-              this.start_count = offset;
+
+              this.start_count = offset + 1;
               this.end_count = offset + limit;
               if(this.end_count > this.total_results) this.end_count = this.total_results;
               if(!first_page){

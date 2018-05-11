@@ -78,7 +78,7 @@
             <button class="btn btn-info btn-block" (click)="runApp('')">Run Application</button>
           </div>
         </div>
-        <div class="col-12 col-md-9">
+        <div class="col-12 col-md-9" *ngIf="final_data_loaded">
           <div class="row">
             <div class="col-12 results-header">
               <span class="main-header">Results</span>
@@ -100,7 +100,7 @@
             </div>
           </div>
 
-          <table class="table table-bordered table-sm table-proampdna">
+          <table class="table table-bordered table-sm table-proampdna" *ngIf="final_data_loaded">
             <thead class="thead-dark">
               <tr>
                 <th colspan="4">Amino acid sequence with least degenerate codons: <code>{{ least_degenerate_codon }}</code></th>
@@ -132,19 +132,23 @@
               </tr>
             </tfoot>
           </table>
-          <nav aria-label="Page navigation example" *ngIf="page_offsets.length != 0">
-            <ul class="pagination pagination-sm justify-content-end">
-              <li class="page-item" [ngClass]="{'disabled': !previous}">
-                <a class="page-link" href="#" (click)="runApp(previous)">Previous</a>
-              </li>
-              <li class="page-item" *ngFor="let offset of page_offsets" [ngClass]="{'active': offset.selected}">
-                <a class="page-link" href="#" (click)="runApp(offset.url)">{{offset.page_number}}</a>
-              </li>
-              <li class="page-item" [ngClass]="{'disabled': !next}">
-                <a class="page-link" href="#" (click)="runApp(next)">Next</a>
-              </li>
-            </ul>
-          </nav>
+          <div class="row" *ngIf="final_data_loaded">
+            <div class="col-12">
+              <nav aria-label="Page navigation example" *ngIf="page_offsets.length != 0">
+                <ul class="pagination pagination-sm justify-content-end">
+                  <li class="page-item" [ngClass]="{'disabled': !previous}">
+                    <a class="page-link" href="#" (click)="runApp(previous)">Previous</a>
+                  </li>
+                  <li class="page-item" *ngFor="let offset of page_offsets" [ngClass]="{'active': offset.selected}">
+                    <a class="page-link" href="#" (click)="runApp(offset.url)">{{offset.page_number}}</a>
+                  </li>
+                  <li class="page-item" [ngClass]="{'disabled': !next}">
+                    <a class="page-link" href="#" (click)="runApp(next)">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
     </div>
