@@ -1,30 +1,35 @@
 .navigation-header{
-  background-color: #22a6b3 !important;
-  font-family: 'Dosis', sans-serif;
+  background-color: #218c74 !important;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.navigation-header button.about-button{
+  color:#FFFFFF;
 }
 
 .banner{
-  background-color: #dff9fb;
+  background-color: #33d9b2;
   color:#777;
   height: 260px;
   width: 100%;
   padding: 30px;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .page-header{
   text-align:center;
+  color: #f7f1e3;
   font-size: 50px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.5;
   margin-top: 20px;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .application{
   background-color: #FFFFFF;
   margin-top: -80px;
-  padding:30px;
+  padding: 10px 30px 20px 30px;
   border-radius: 3px 3px 3px 3px;
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
@@ -32,86 +37,81 @@
   -webkit-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
   -moz-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
   box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .application .form-element{
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
-.application .species_data_wrap{
-  max-height: 200px;
-  overflow-y: scroll;
+.application .form-element input, .application .form-element select, .application .form-element textarea{
+  color:#777;
+  font-weight: 600;
+  font-family: 'Dosis', sans-serif;
 }
-.application .codon-help-text{
-  margin-top: -22px;
-  margin-left: 2px;
+
+.application .form-element button.utility-button{
+  margin-top: -2px;
+    font-size: 11px;
+  line-height: 1;
+    padding: 4px;
+    margin-left: 10px;
 }
 
 .table-proampdna{
   color:#777;
   font-weight: 500;
   line-height: 2;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-.results-header{
+.proampdna-results{
   margin-top: 20px;
 }
 
-.results-header{
-  font-size: 40px;
-  margin-bottom: 20px;
+.segment{
+  background-color: #FFFFFF;
+  margin-top: 20px;
+  border-radius: 3px 3px 3px 3px !important;
+  -moz-border-radius: 3px 3px 3px 3px !important;
+  -webkit-border-radius: 3px 3px 3px 3px !important;
+  -webkit-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
+  font-family: 'Ubuntu', sans-serif;
 }
 
-.results-counts{
-  font-size: 18px;
-  color:#777;
-  margin-top: 3px;
+.segment .segment-header{
+  padding: 15px;
+  background-color: #218c74;
+  color: #FFFFFF;
 }
 
-.pagination-wrapper{
-  text-align: right;
+.segment .segment-content{
+      padding: 15px;
+    padding-bottom: 2px;
 }
 
-/*.application-input-form{*/
-
-    /*padding: 30px;*/
-
-  /*font-size: 12px;*/
-
-/*}*/
-
-
-
-/*.application-input-form .form-content{*/
-  /*margin-top: 20px;*/
-/*}*/
-
-/*.application-input-form .form-label{*/
-  /*font-size: 20px;*/
-/*}*/
-
-/*.application-input-form-footer{*/
-  /*background-color: #dff9fb;*/
-  /*padding: 30px;*/
-  /*border-radius: 0px 0px 3px 3px;*/
-    /*-moz-border-radius: 0px 0px 3px 3px;*/
-    /*-webkit-border-radius: 0px 0px 3px 3px;*/
-    /*border: 0px solid #000000;*/
-    /*-webkit-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);*/
-    /*-moz-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);*/
-    /*box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);*/
-  /*font-family: 'Dosis', sans-serif;*/
-/*}*/
-
-/*.application-results{*/
-  /*margin-top: 100px;*/
-  /*font-size: 12px;*/
-/*}*/
+.segment .segment-header button{
+    margin-top: -5px;
+    font-size: 11px;
+  line-height: 1;
+    padding: 4px;
+    margin-left: 10px;
+}
 
 .footer-wrap{
   text-align: center;
-  margin-top: 120px;
-  font-family: 'Dosis', sans-serif;
+  margin-top: 180px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.footer-wrap strong{
+  color:#218c74;
+  font-weight: 500;
+}
+
+.footer-wrap .sub-footer{
+  font-size: 12px;
+  margin-top: -12px;
 }

@@ -18,43 +18,54 @@ export class AppComponent {
   private primer_length: string = "12";
   private email: string = "shiv.prsd19@gmail.com";
 
-  private specie_data = {};
-  private result_data = {};
-  private total_results = {};
-  private page_offsets = [];
-  private previous = "";
-  private next = "";
-  private start_count = "";
-  private end_count = "";
-  private least_degenerate_codon = "";
+  private specie_data:object = {};
+  private result_data:object = {};
+  private total_results:object = {};
+  private page_offsets:object = [];
+  private previous:any = "";
+  private next:any = "";
+  private start_count:number = 0;
+  private end_count:number = 0;
+  private least_degenerate_codon:string = "";
 
   private specie_data_loaded: boolean = false;
   private final_data_loaded: boolean = false;
+  private show_specie_data:boolean = false;
+  private running_application:boolean = false;
+  private running_data_loading:boolean = false;
 
   constructor(private http: HttpClient){}
 
   public fetchSpeciesData(){
       if(this.specie_id.trim() != ""){
+          this.running_data_loading = true;
           let url = this.base_url + "/api/load-species-data/?specie_id=" + this.specie_id;
           this.http.get(url).subscribe((res)=>{
             this.specie_data = res.species_data;
             this.specie_data_loaded = true;
+            this.running_data_loading = false;
           });
       }
+  }
+
+  public toggleViewSpecieData(){
+    this.show_specie_data = !this.show_specie_data;
   }
 
   public runApp(url){
 
       if(!Boolean(url)){
         url = this.base_url + "/api/run-app/?amino_acid_seq=" + this.amino_acid_sequence + "&email=" + this.email + "&primer_len=" + this.primer_length + "&specie_id="+this.specie_id;
+        this.running_application = true;
       }
 
       this.http.get(url).subscribe((res)=>{
+          this.running_application = false;
           this.final_data_loaded = true;
           this.result_data = res.results;
           this.page_offsets = [];
+          this.total_results = Number(res.count);
           if(Number(res.count) > 100){
-              this.total_results = Number(res.count);
               this.previous = res.previous;
               this.next = res.next;
               this.least_degenerate_codon = res.results[0].aasldc;
@@ -71,6 +82,7 @@ export class AppComponent {
                   if(key == 'offset') offset = Number(value);
                 }
                 offset += limit;
+
               }
               if(Boolean(this.next)){
                 last_page = false;
