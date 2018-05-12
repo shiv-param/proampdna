@@ -1,23 +1,23 @@
-.navigation-header{
+.navigation-header {
   background-color: #218c74 !important;
   font-family: 'Ubuntu', sans-serif;
 }
 
-.navigation-header button.about-button{
-  color:#FFFFFF;
+.navigation-header button.about-button {
+  color: #FFFFFF;
 }
 
-.banner{
+.banner {
   background-color: #33d9b2;
-  color:#777;
+  color: #777;
   height: 260px;
   width: 100%;
   padding: 30px;
   font-family: 'Ubuntu', sans-serif;
 }
 
-.page-header{
-  text-align:center;
+.page-header {
+  text-align: center;
   color: #f7f1e3;
   font-size: 50px;
   font-weight: 500;
@@ -26,7 +26,7 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-.application{
+.application {
   background-color: #FFFFFF;
   margin-top: -80px;
   padding: 10px 30px 20px 30px;
@@ -34,84 +34,86 @@
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border: 0px solid #000000;
-  -webkit-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
-  box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.1);
   font-family: 'Ubuntu', sans-serif;
 }
 
-.application .form-element{
+.application .form-element {
   margin-top: 18px;
 }
 
-.application .form-element input, .application .form-element select, .application .form-element textarea{
-  color:#777;
+.application .form-element input, .application .form-element select, .application .form-element textarea {
+  color: #777;
   font-weight: 600;
   font-family: 'Dosis', sans-serif;
 }
 
-.application .form-element button.utility-button{
+.application .form-element button.utility-button {
   margin-top: -2px;
-    font-size: 11px;
+  font-size: 11px;
   line-height: 1;
-    padding: 4px;
-    margin-left: 10px;
+  padding: 4px;
+  margin-left: 10px;
 }
 
-.table-proampdna{
-  color:#777;
+.table-proampdna {
+  color: #777;
   font-weight: 500;
   line-height: 2;
   font-size: 13px;
 }
 
-.proampdna-results{
+.proampdna-results {
   margin-top: 20px;
 }
 
-.segment{
+.segment {
   background-color: #FFFFFF;
   margin-top: 20px;
   border-radius: 3px 3px 3px 3px !important;
   -moz-border-radius: 3px 3px 3px 3px !important;
   -webkit-border-radius: 3px 3px 3px 3px !important;
-  -webkit-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
-  box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.1);
   font-family: 'Ubuntu', sans-serif;
 }
 
-.segment .segment-header{
+.segment .segment-header {
   padding: 15px;
   background-color: #218c74;
   color: #FFFFFF;
 }
 
-.segment .segment-content{
-      padding: 15px;
-    padding-bottom: 2px;
+.segment .segment-content {
+  padding: 15px;
+  padding-bottom: 2px;
 }
 
-.segment .segment-header button{
-    margin-top: -5px;
-    font-size: 11px;
+.segment .segment-header a {
+  margin-top: -5px;
+  font-size: 11px;
   line-height: 1;
-    padding: 4px;
-    margin-left: 10px;
+  padding: 4px;
+  margin-left: 10px;
+  color: #218c74;
 }
 
-.footer-wrap{
+.footer-wrap {
   text-align: center;
   margin-top: 180px;
   font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 30px;
 }
 
-.footer-wrap strong{
-  color:#218c74;
+.footer-wrap strong {
+  color: #218c74;
   font-weight: 500;
 }
 
-.footer-wrap .sub-footer{
+.footer-wrap .sub-footer {
   font-size: 12px;
   margin-top: -12px;
 }
