@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import re
 from django.conf import settings
+import csv
+from django.utils.encoding import smart_str
 
 
 def build_url_for_scrap(specie_id):
@@ -61,3 +63,32 @@ def revCod(stri):
        elif stri[i] == 'C':
            ret += 'G'
    return ret[::-1]
+
+
+def export(response, export_as, data):
+
+    if export_as == 'csv':
+
+        writer = csv.writer(response, csv.excel)
+        response.write(u'\ufeff'.encode('utf8'))  # BOM (optional...Excel needs it to open UTF-8 file properly)
+
+        writer.writerow([
+            smart_str(u"Forword Primer"),
+            smart_str(u"Reverse Primer"),
+            smart_str(u"Frequency"),
+            smart_str(u"Length"),
+            smart_str(u"% GC"),
+            smart_str(u"Melting Point"),
+        ])
+
+        for obj in data:
+            writer.writerow([
+                smart_str(obj['forwardPrimer']),
+                smart_str(obj['reversePrimer']),
+                smart_str(obj['frequency']),
+                smart_str(obj['length']),
+                smart_str(obj['GCPerc']),
+                smart_str(obj['meltingPoint']),
+            ])
+
+        return response
