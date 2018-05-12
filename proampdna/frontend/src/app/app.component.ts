@@ -14,7 +14,7 @@ export class AppComponent {
   private base_url: string = "http://localhost:8000";
 
   private specie_id: string = "9606";
-  private amino_acid_sequence: string = "ATCDQYWEGLFHYKIRPHVVVPYQM";
+  private amino_acid_sequence: string = "";
   private primer_length: string = "12";
   private email: string = "shiv.prsd19@gmail.com";
 
@@ -35,6 +35,22 @@ export class AppComponent {
   private running_data_loading:boolean = false;
 
   constructor(private http: HttpClient){}
+
+  public uploadAminoAcidSeq(event: any) {
+    let reader = new FileReader();
+    reader.readAsText(event.srcElement.files[0]);
+    let vm = this;
+    reader.onload = function () {
+      vm.amino_acid_sequence = reader.result;
+    }
+  }
+
+  public importAminoAcidSeqFromFile(event: any){
+    event.preventDefault();
+    let element:HTMLElement = document.getElementById('amino-acid-file-upload') as HTMLElement;
+    element.click();
+  }
+
 
   public fetchSpeciesData(){
       if(this.specie_id.trim() != ""){

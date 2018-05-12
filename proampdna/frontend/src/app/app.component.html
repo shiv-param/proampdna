@@ -53,10 +53,12 @@
           <div class="form-element">
             <label for="amino_acid_sequence">
               Amino acid sequence
-              <button class="btn btn-info btn-sm utility-button" [disabled]="running_application" (click)="importAminoAcidSeqFromFile()">
+
+            </label>
+            <button class="btn btn-info btn-sm utility-button" [disabled]="!specie_data_loaded || running_application" (click)="importAminoAcidSeqFromFile($event)">
                 Import (.txt)
               </button>
-            </label>
+            <input id="amino-acid-file-upload" type="file" accept=".txt" (change)="uploadAminoAcidSeq($event)" hidden>
             <textarea class="form-control" id="amino_acid_sequence" rows="8" [(ngModel)]="amino_acid_sequence" [disabled]="!specie_data_loaded || running_application"></textarea>
           </div>
         </div>
